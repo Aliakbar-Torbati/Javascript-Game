@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Spiderman Game...</title>
+</head>
+<body>
+    <main>
+        <!-- #game-intro -->
+        <div id="game-intro">
+          <img src="./images/spiderman2.PNG" alt="" class="logo-img" />
+          <br />
+          <button id="start-button">Start Game</button>
+          <p>Use the left and right arrow to control the car!</p>
+          <!-- <img src="./images/arrows.png" alt="" class="arrows-img" /> -->
+        </div>
+  
+        <div id="game-container">
+          <div>
+            <h2>Stats</h2>
+            <p>Score: <span id="score">0</span></p>
+            <p>Lives: <span id="lives">3</span></p>
+          </div>
+          <!-- #game-screen -->
+          <div id="game-screen"></div>
+        </div>
+  
+        <!-- #game-end -->
+        <div id="game-end">
+          <img src="./images/logo.png" alt="" class="logo-img" />
+          <h1>Game Over</h1>
+          <br />
+          <button id="restart-button">Try again!</button>
+        </div>
+      </main>
+      <script type="text/javascript" src="js/player.js"></script>
+      <script type="text/javascript" src="js/buildings.js"></script>
+      <script type="text/javascript" src="js/game.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
