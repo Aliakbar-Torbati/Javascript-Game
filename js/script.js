@@ -1,6 +1,7 @@
 window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
+    const muteCheckBox= document.getElementById("makeMute")
     /// let game; // added
     const game= new Game()    //me
     startButton.addEventListener("click", function () {
@@ -31,9 +32,12 @@ window.onload = function () {
 
 
     function startGame() {
-      console.log("start game");
-     // game = new Game(); // added
-  
-      game.start(); // added
+      game.start(); 
+
+      if (muteCheckBox.checked){
+       
+      }
     }
+
+
   };

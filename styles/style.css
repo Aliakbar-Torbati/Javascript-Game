@@ -1,57 +1,74 @@
 body {
     padding: 0;
-    text-align: center;
-
     margin: 0;
-   
+    text-align: center;
     
-    background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Set the height to 100% of the viewport height */
+     height: 650px; 
+     width : 1000px;
   }
   
   #game-intro {
-    
+    background-image: url('/images/spider-man-marvel.jpg');
+    background-size: cover;
+    /* background-size: 100% 100%; */
+    width: 1000px;
+    height: 500px;
     padding: 20px 0px;
-    /* background-image: url('/images/spiderman2.PNG'); */
+
   }
+  #introContainer {
+    margin-right: 400px;
+    margin-top: 100px;
+  }
+  #introContainer h1{
+    font-size: 40px;
+    font-weight: bold;
+  }
+
   
   #game-container {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+  }
+  #scoreDiv {
     display: flex;
-    width: 100vw;
-    padding: 20px 0px;
-    justify-content: center;
+    flex-direction: row;
   }
   
+  h2{
+    color: aqua;
+  }
   #game-screen {
     display: none;
     align-content: center;
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
+  
     background-image: url(../images/bg3.jpg);
     background-size: cover;
-    /* animation: slide 5s linear infinite; */
+    
   }
   
-  /* @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  } */
-  
+  #endContainer {
+    background-image: url(../images/sadspiderman2.jpg);
+    background-size: cover;
+    display: flex ;
+    flex-direction: column;
+    width: 1000px;
+    height: 500px;
+
+  }
+
   #game-end {
     display: none;
+
   }
   
   .game-intro p {
@@ -68,12 +85,73 @@ body {
   }
   
   body button {
-    font-size: 30px;
-    background-color: #870007;
-    color: #fff;
-    padding: 20px 40px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    
+
+
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 22px/35px Arial, sans-serif;
+ 
+    text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+ 
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+ 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+ 
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+
+  }
+  
+  #userName {
+    /* justify-content: left;
+    align-items: end; */
+    text-align: left;
+    align-content: flex-start;
+
+  }
+  #score {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  #lives {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  #userDiv {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
   }

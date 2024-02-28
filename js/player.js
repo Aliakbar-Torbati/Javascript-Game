@@ -26,17 +26,17 @@ class Player {
         this.directionX=0;
         this.left=1;
       }
-      if (this.left >= 950){
+      if (this.left >= 920){
         this.directionX=0;
-        this.left=949;
+        this.left=919;
       }
       if (this.top <= 0){
         this.directionY=0;
         this.top=1;
       }
-      if (this.top > 460){
+      if (this.top > 450){
         this.directionY=0;
-        this.top=459;
+        this.top=449;
       }
 
 

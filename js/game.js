@@ -1,6 +1,7 @@
 class Game {
   constructor() {
     this.startScreen = document.getElementById("game-intro");
+    this.gameContainer = document.getElementById("game-container");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
     this.scoreElement = document.getElementById("score");
@@ -29,15 +30,18 @@ class Game {
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60);
 // adding songs
-    this.buildingCrashSong= new Audio ("./audio/crash1.wav")
+    this.buildingCrashSong= new Audio ("./audio/crash3.wav")
     this.buildingCrashSong.volume= 0.1;
     this.octapusCrashSong= new Audio ("./audio/crash2.wav")
     this.octapusCrashSong.volume= 0.1;
     this.heartSong= new Audio ("./audio/heart.wav")
     this.heartSong.volume= 0.1;
-    // this.gameOverSong= new Audio ("./audio/gameover.wav")
-    // this.gameOverSong.volume= 0.1;
+    this.gameOverSong= new Audio ("./audio/gameover.wav")
+    this.gameOverSong.volume= 0.1;
+    this.backgroungSong= new Audio ("./audio/Grand-Song.mp3")
+    this.backgroungSong.volume= 0.1;
   }
+
 
   start() {
     // Set the height and width of the game screen
@@ -50,11 +54,23 @@ class Game {
 
     // Show the game screen
     this.gameScreen.style.display = "block";
+    this.gameContainer.style.display ="block"
+
+    //adding song
+    this.backgroungSong.play()
 
     // Runs the gameLoop on a fequency of 60 times per second. Also stores the ID of the interval.
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrequency);
+
+ 
+      document.querySelectorAll("audio").forEach((elem) => {
+        elem.muted = true;
+        elem.pause();
+      });
+    // }
+
   }
 
   gameLoop() {
@@ -117,12 +133,14 @@ class Game {
         this.lives--;
         this.livesElement.innerText = this.lives;
         this.buildings.push(new Building(this.gameScreen, 1100));
+
         // Adding Audio
         this.buildingCrashSong.play()
 
         if (this.lives === 0) {
-          this.gameIsOver = true
-          // this.gameOverSong.play();
+          this.gameOverSong.play()
+          this.gameIsOver = true;
+          
         }
       }
     });
@@ -158,8 +176,9 @@ class Game {
         this.buildingCrashSong.play()
 
         if (this.lives === 0) {
+          this.gameOverSong.play()
           this.gameIsOver = true;
-          // this.gameOverSong.play();
+          
         }
       }
     });
@@ -208,17 +227,19 @@ class Game {
       }
       
       if (this.lives === 0) {
+        this.gameOverSong.play();
         this.gameIsOver = true;
-        // this.gameOverSong.play();
+         
       }
     });
 
-
   }
   gameOver() {
-    console.log("over");
+    
     this.gameScreen.style.display = "none";
+    this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
+    this.backgroungSong.pause()
     if (this.score < 5) {
       this.finalText.innerText = "oh! youshould try more...";
     }

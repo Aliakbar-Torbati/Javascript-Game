@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Spiderman Game...</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <!-- #game-intro -->
-        <div id="game-intro">
-          <img src="./images/spiderman2.PNG" alt="" class="logo-img" />
+      <!-- #game-intro -->
+      <div id="game-intro">
+        <div id="introContainer">
+          <h1>Spiderman Game!</h1>
           <br />
-          <input id="userName" type="text" placeholder="Pleasr write your name here..."><br>
-          <button id="start-button">Start Game</button><br>
-           <img src="./images/arrows.png" alt="" class="arrows-img" />
-           <p>Use the arrow keys to control the Spiderman</p>
+          <label for="input">your name:</label><br>
+          <input id="userName" type="text" placeholder="" /><br /><br />
+          <button id="start-button">Start Game</button><br />
+          <img src="./images/arrows2.png" alt="" class="arrows-img" />
+          <p>Use the arrow keys to control the Spiderman</p>
+          <input type="checkbox" id="makeMute" name="" value="mute">
+          <label for="mute">Mute the songs</label><br>
         </div>
-  
-        <div id="game-container">
-          <div>
-            <audio id="myAudio" controls>
-              <source src="./audio/mixkit-game-show-fun-suspense-942.wav" type="audio/mp3">
-          </audio>
-          
-            <h2>Stats</h2>
-            <h3 id="userId"></h3>
-            <p>Score: <span id="score">0</span></p>
-            <p>Lives: <span id="lives">3</span></p>
-          </div>
-          <!-- #game-screen -->
-          <div id="game-screen"></div>
-        </div>
-  
-        <!-- #game-end -->
-        <div id="game-end">
-          <img src="./images/logo.png" alt="" class="logo-img" />
+      </div>
+
+      <!-- main game screen -->
+      <div id="game-container">
+        <div id="userDiv"><h3 id="userId"></h3></div>
+        <div id="scoreDiv">
+          <p>Score: <span id="score">0</span></p>
+          <p>Lives: <span id="lives">3</span></p>
+      </div>
+      </div>
+      <!-- #game-screen -->
+      <div id="game-screen"></div>
+
+      <!-- #game-end -->
+      <div id="game-end">
+        <div id="endContainer">
           <h1>Game Over</h1>
           <h3 id="finalText"></h3>
           <br />
           <button id="restart-button">Try again!</button>
         </div>
-      </main>
-      <script type="text/javascript" src="js/player.js"></script>
-      <script type="text/javascript" src="js/buildings.js"></script>
-      <script type="text/javascript" src="js/blackSpidermen.js"></script>
-      <script type="text/javascript" src="js/hearts.js"></script>
-      <script type="text/javascript" src="js/game.js"></script>
-      <script type="text/javascript" src="js/script.js"></script>
-</body>
+      </div>
+    </main>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/buildings.js"></script>
+    <script type="text/javascript" src="js/blackSpidermen.js"></script>
+    <script type="text/javascript" src="js/hearts.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>
