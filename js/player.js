@@ -11,7 +11,7 @@ class Player {
       this.element.src = imgSrc;
       
       this.element.style.position = "absolute";
-      // Set up the default element's property values
+      
       this.element.style.width = `${this.width}px`;
       this.element.style.height = `${this.height}px`;
       this.element.style.left = `${this.left}px`;
@@ -21,13 +21,29 @@ class Player {
     }
 
     move() {
-        // Update player's car position based on directionX and directionY
-        if(this.left >= 50){
-        this.left += this.directionX;
-        }
+      //game.player.directionX=0;
+      if (this.left < 0){
+        this.directionX=0;
+        this.left=1;
+      }
+      if (this.left >= 950){
+        this.directionX=0;
+        this.left=949;
+      }
+      if (this.top <= 0){
+        this.directionY=0;
+        this.top=1;
+      }
+      if (this.top > 460){
+        this.directionY=0;
+        this.top=459;
+      }
+
+
+        // if(this.left >= 0){
+         this.left += this.directionX;
+        // }
         this.top += this.directionY;
-
-
 
         this.updatePosition(); 
     }

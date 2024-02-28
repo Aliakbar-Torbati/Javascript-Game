@@ -12,14 +12,20 @@
         <div id="game-intro">
           <img src="./images/spiderman2.PNG" alt="" class="logo-img" />
           <br />
-          <button id="start-button">Start Game</button>
-          <p>Use the left and right arrow to control the car!</p>
-          <!-- <img src="./images/arrows.png" alt="" class="arrows-img" /> -->
+          <input id="userName" type="text" placeholder="Pleasr write your name here..."><br>
+          <button id="start-button">Start Game</button><br>
+           <img src="./images/arrows.png" alt="" class="arrows-img" />
+           <p>Use the arrow keys to control the Spiderman</p>
         </div>
   
         <div id="game-container">
           <div>
+            <audio id="myAudio" controls>
+              <source src="./audio/mixkit-game-show-fun-suspense-942.wav" type="audio/mp3">
+          </audio>
+          
             <h2>Stats</h2>
+            <h3 id="userId"></h3>
             <p>Score: <span id="score">0</span></p>
             <p>Lives: <span id="lives">3</span></p>
           </div>
@@ -31,12 +37,15 @@
         <div id="game-end">
           <img src="./images/logo.png" alt="" class="logo-img" />
           <h1>Game Over</h1>
+          <h3 id="finalText"></h3>
           <br />
           <button id="restart-button">Try again!</button>
         </div>
       </main>
       <script type="text/javascript" src="js/player.js"></script>
       <script type="text/javascript" src="js/buildings.js"></script>
+      <script type="text/javascript" src="js/blackSpidermen.js"></script>
+      <script type="text/javascript" src="js/hearts.js"></script>
       <script type="text/javascript" src="js/game.js"></script>
       <script type="text/javascript" src="js/script.js"></script>
 </body>
