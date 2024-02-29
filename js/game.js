@@ -41,6 +41,7 @@ class Game {
     this.gameOverSong.volume= 0.1;
     this.backgroungSong= new Audio ("./audio/Grand-Song.mp3")
     this.backgroungSong.volume= 0.1;
+    this.sound=true;
   }
 
 
@@ -131,6 +132,7 @@ class Game {
         this.buildings.push(new Building(this.gameScreen, 1100));
 
         // Adding Audio
+        // if ()
         this.buildingCrashSong.play()
 
         if (this.lives === 0) {

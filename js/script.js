@@ -33,8 +33,11 @@ window.onload = function () {
 
     function startGame() {
       game.start(); 
-      game.songsPause();
+       if (muteCheckBox.checked){
+        console.log('pause')
+         game.songsPause();
+       }
     }
-
+  
 
   };
