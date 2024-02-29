@@ -17,7 +17,7 @@ class Game {
       200,
       90,
       90,
-      "../images/spiderman-logo-withoutbg4.png"
+      "images/spiderman-logo-withoutbg4.png"
     );
     this.height = 500;
     this.width = 1000;
