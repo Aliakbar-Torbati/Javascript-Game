@@ -30,20 +30,19 @@ class Game {
     this.gameIsOver = false;
     this.gameIntervalId;
     this.gameLoopFrequency = Math.round(1000 / 60);
-// adding songs
-    this.buildingCrashSong= new Audio ("./audio/crash3.wav")
-    this.buildingCrashSong.volume= 0.07;
-    this.octapusCrashSong= new Audio ("./audio/crash2.wav")
-    this.octapusCrashSong.volume= 0.1;
-    this.heartSong= new Audio ("./audio/heart.wav")
-    this.heartSong.volume= 0.1;
-    this.gameOverSong= new Audio ("./audio/gameover.wav")
-    this.gameOverSong.volume= 0.1;
-    this.backgroungSong= new Audio ("./audio/Grand-Song.mp3")
-    this.backgroungSong.volume= 0.1;
+    // adding songs
+    this.buildingCrashSong = new Audio("./audio/crash3.wav");
+    this.buildingCrashSong.volume = 0.07;
+    this.octapusCrashSong = new Audio("./audio/crash2.wav");
+    this.octapusCrashSong.volume = 0.1;
+    this.heartSong = new Audio("./audio/heart.wav");
+    this.heartSong.volume = 0.1;
+    this.gameOverSong = new Audio("./audio/gameover.wav");
+    this.gameOverSong.volume = 0.1;
+    this.backkgroungSong= new Audio ("./audio/Grand-Song.mp3")
+    this.backkgroungSong.volume = 0.1;
     this.sound=true;
   }
-
 
   start() {
     // Set the height and width of the game screen
@@ -56,11 +55,12 @@ class Game {
 
     // Show the game screen
     this.gameScreen.style.display = "block";
-    this.gameContainer.style.display ="block"
+    this.gameContainer.style.display = "block";
 
     //adding song
-    if (this.sound){
-    this.backgroungSong.play()
+    if (this.sound) {
+      console.log("pauseeeeeeee");
+      this.backkgroungSong.play();
     }
     // Runs the gameLoop on a fequency of 60 times per second. Also stores the ID of the interval.
     this.gameIntervalId = setInterval(() => {
@@ -68,7 +68,6 @@ class Game {
     }, this.gameLoopFrequency);
 
     // }
-
   }
 
   gameLoop() {
@@ -103,7 +102,7 @@ class Game {
     //   }
 
     // }
-    //  first obstacle **************** 
+    //  first obstacle ****************
     this.buildings.forEach((building, indexOfBuilding) => {
       building.move();
 
@@ -117,7 +116,7 @@ class Game {
       }
       if (this.score > 10) {
         building.highermove2();
-      }else if (this.score > 3) {
+      } else if (this.score > 3) {
         building.highermove();
       }
       if (building.left < -50) {
@@ -133,16 +132,16 @@ class Game {
         this.buildings.push(new Building(this.gameScreen, 1100));
 
         // Adding Audio
-        if (this.sound){
-        this.buildingCrashSong.play()
+        if (this.sound) {
+          console.log('building')
+          this.buildingCrashSong.play();
         }
 
         if (this.lives === 0) {
-          if (this.sound){
-          this.gameOverSong.play()
+          if (this.sound) {
+            this.gameOverSong.play();
           }
           this.gameIsOver = true;
-          
         }
       }
     });
@@ -160,7 +159,7 @@ class Game {
       }
       if (this.score > 10) {
         building.highermove2();
-      }else if (this.score > 4) {
+      } else if (this.score > 4) {
         building.highermove();
       }
       if (building.left < -50) {
@@ -174,17 +173,16 @@ class Game {
         this.lives--;
         this.livesElement.innerText = this.lives;
         this.buildings2.push(new Building(this.gameScreen, 1600));
-      // Adding Audio
-      if (this.sound){
-        this.buildingCrashSong.play()
-      }
+        // Adding Audio
+        if (this.sound) {
+          this.buildingCrashSong.play();
+        }
 
         if (this.lives === 0) {
-          if (this.sound){
-          this.gameOverSong.play()
+          if (this.sound) {
+            this.gameOverSong.play();
           }
           this.gameIsOver = true;
-          
         }
       }
     });
@@ -204,8 +202,8 @@ class Game {
         this.lives++;
         this.livesElement.innerText = this.lives;
         this.hearts.push(new Heart(this.gameScreen));
-        if (this.sound){
-        this.heartSong.play()
+        if (this.sound) {
+          this.heartSong.play();
         }
       }
     });
@@ -228,34 +226,31 @@ class Game {
         this.livesElement.innerText = this.lives;
         this.blackSpidermen.push(new BlackSpiderman(this.gameScreen));
         //adding song
-        if (this.sound){
-        this.octapusCrashSong.play();
+        if (this.sound) {
+          this.octapusCrashSong.play();
         }
       }
       if (this.score > 4) {
         black.highermove();
       }
-      
+
       if (this.lives === 0) {
-        if (this.sound){
-        this.gameOverSong.play();
+        if (this.sound) {
+          this.gameOverSong.play();
         }
         this.gameIsOver = true;
-         
       }
     });
-
   }
   gameOver() {
-    
     this.gameScreen.style.display = "none";
     this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
-    if (this.sound){
-    this.backgroungSong.pause()
-    }
+    //if (this.sound){
+    this.backkgroungSong.pause();
+    // }
 
-    this.finalScore.innerText = `Your Final Score: ${this.score}`
+    this.finalScore.innerText = `Your Final Score: ${this.score}`;
 
     if (this.score < 5) {
       this.finalText.innerText = "oh! you should try more...";
@@ -272,31 +267,30 @@ class Game {
   }
 
   restart() {
-
     location.reload();
-  //   this.gameEndScreen.style.display = "none";
-  //   this.gameScreen.style.display = "block";
-  // //  this.buildings.pop();
-  //  // building.element.remove();
-  //   this.buildings.push(new Building(this.gameScreen, 1100));
+    //   this.gameEndScreen.style.display = "none";
+    //   this.gameScreen.style.display = "block";
+    // //  this.buildings.pop();
+    //  // building.element.remove();
+    //   this.buildings.push(new Building(this.gameScreen, 1100));
 
-  //  // this.buildings2.pop();
-  // //  building.element.remove();
-  //   this.buildings2.push(new Building(this.gameScreen, 1600));
+    //  // this.buildings2.pop();
+    // //  building.element.remove();
+    //   this.buildings2.push(new Building(this.gameScreen, 1600));
 
-  //  // this.hearts.pop();
-  //  // heart.element.remove();
-  //   this.hearts.push(new Heart(this.gameScreen));
+    //  // this.hearts.pop();
+    //  // heart.element.remove();
+    //   this.hearts.push(new Heart(this.gameScreen));
 
-  //  // this.blackSpidermen.pop();
-  //   //black.element.remove();
-  //   this.blackSpidermen.push(new BlackSpiderman(this.gameScreen));
-  //   this.score = 0;
-  //   this.lives = 3;
-  //   this.gameIsOver = false;
+    //  // this.blackSpidermen.pop();
+    //   //black.element.remove();
+    //   this.blackSpidermen.push(new BlackSpiderman(this.gameScreen));
+    //   this.score = 0;
+    //   this.lives = 3;
+    //   this.gameIsOver = false;
 
-  //   // calling the start method
-  //   this.start();
+    //   // calling the start method
+    //   this.start();
   }
   // songsPause(){
   //   this.buildingCrashSong.pause()

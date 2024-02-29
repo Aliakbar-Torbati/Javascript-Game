@@ -32,12 +32,10 @@ window.onload = function () {
 
 
     function startGame() {
-      game.start(); 
-       if (muteCheckBox.checked){
+      if (muteCheckBox.checked){
         console.log('pause')
          game.sound=false;
        }
+      game.start(); 
     }
-  
-
   };
