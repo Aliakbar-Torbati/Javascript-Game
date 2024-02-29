@@ -35,7 +35,7 @@ window.onload = function () {
       game.start(); 
        if (muteCheckBox.checked){
         console.log('pause')
-         game.songsPause();
+         game.sound=false;
        }
     }
   

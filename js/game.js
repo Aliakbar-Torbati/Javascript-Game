@@ -32,7 +32,7 @@ class Game {
     this.gameLoopFrequency = Math.round(1000 / 60);
 // adding songs
     this.buildingCrashSong= new Audio ("./audio/crash3.wav")
-    this.buildingCrashSong.volume= 0.1;
+    this.buildingCrashSong.volume= 0.07;
     this.octapusCrashSong= new Audio ("./audio/crash2.wav")
     this.octapusCrashSong.volume= 0.1;
     this.heartSong= new Audio ("./audio/heart.wav")
@@ -59,8 +59,9 @@ class Game {
     this.gameContainer.style.display ="block"
 
     //adding song
+    if (this.sound){
     this.backgroungSong.play()
-
+    }
     // Runs the gameLoop on a fequency of 60 times per second. Also stores the ID of the interval.
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
@@ -132,11 +133,14 @@ class Game {
         this.buildings.push(new Building(this.gameScreen, 1100));
 
         // Adding Audio
-        // if ()
+        if (this.sound){
         this.buildingCrashSong.play()
+        }
 
         if (this.lives === 0) {
+          if (this.sound){
           this.gameOverSong.play()
+          }
           this.gameIsOver = true;
           
         }
@@ -171,10 +175,14 @@ class Game {
         this.livesElement.innerText = this.lives;
         this.buildings2.push(new Building(this.gameScreen, 1600));
       // Adding Audio
+      if (this.sound){
         this.buildingCrashSong.play()
+      }
 
         if (this.lives === 0) {
+          if (this.sound){
           this.gameOverSong.play()
+          }
           this.gameIsOver = true;
           
         }
@@ -196,7 +204,9 @@ class Game {
         this.lives++;
         this.livesElement.innerText = this.lives;
         this.hearts.push(new Heart(this.gameScreen));
+        if (this.sound){
         this.heartSong.play()
+        }
       }
     });
 
@@ -218,14 +228,18 @@ class Game {
         this.livesElement.innerText = this.lives;
         this.blackSpidermen.push(new BlackSpiderman(this.gameScreen));
         //adding song
+        if (this.sound){
         this.octapusCrashSong.play();
+        }
       }
       if (this.score > 4) {
         black.highermove();
       }
       
       if (this.lives === 0) {
+        if (this.sound){
         this.gameOverSong.play();
+        }
         this.gameIsOver = true;
          
       }
@@ -237,7 +251,9 @@ class Game {
     this.gameScreen.style.display = "none";
     this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
+    if (this.sound){
     this.backgroungSong.pause()
+    }
 
     this.finalScore.innerText = `Your Final Score: ${this.score}`
 
@@ -282,11 +298,11 @@ class Game {
   //   // calling the start method
   //   this.start();
   }
-  songsPause(){
-    this.buildingCrashSong.pause()
-    this.backgroungSong.pause()
-    this.octapusCrashSong.pause()
-    this.heartSong.pause()
-    this.gameOverSong.pause()
-  };
+  // songsPause(){
+  //   this.buildingCrashSong.pause()
+  //   this.backgroungSong.pause()
+  //   this.octapusCrashSong.pause()
+  //   this.heartSong.pause()
+  //   this.gameOverSong.pause()
+  // };
 }
