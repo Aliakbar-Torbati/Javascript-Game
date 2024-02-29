@@ -65,11 +65,6 @@ class Game {
       this.gameLoop();
     }, this.gameLoopFrequency);
 
- 
-      document.querySelectorAll("audio").forEach((elem) => {
-        elem.muted = true;
-        elem.pause();
-      });
     // }
 
   }
