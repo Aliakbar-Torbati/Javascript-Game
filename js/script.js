@@ -2,10 +2,16 @@ window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
     const muteCheckBox= document.getElementById("makeMute")
+    
     /// let game; // added
     const game= new Game()    //me
     startButton.addEventListener("click", function () {
+      if (game.userName.value === "") {
+        console.log("ooyyy")
+        alert('Please enter your name!');
+      }else{
       startGame();
+      }
     });
     restartButton.addEventListener("click", function () {
       game.restart()

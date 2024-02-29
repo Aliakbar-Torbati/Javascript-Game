@@ -32,7 +32,7 @@ class Game {
     this.gameLoopFrequency = Math.round(1000 / 60);
     // adding songs
     this.buildingCrashSong = new Audio("./audio/crash3.wav");
-    this.buildingCrashSong.volume = 0.07;
+    this.buildingCrashSong.volume = 0.04;
     this.octapusCrashSong = new Audio("./audio/crash2.wav");
     this.octapusCrashSong.volume = 0.1;
     this.heartSong = new Audio("./audio/heart.wav");
@@ -42,6 +42,7 @@ class Game {
     this.backkgroungSong= new Audio ("./audio/Grand-Song.mp3")
     this.backkgroungSong.volume = 0.1;
     this.sound=true;
+
   }
 
   start() {
