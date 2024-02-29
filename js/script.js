@@ -33,13 +33,7 @@ window.onload = function () {
 
     function startGame() {
       game.start(); 
-
-      if (muteCheckBox.checked){
-        document.querySelectorAll("audio").forEach((elem) => {
-          elem.muted = true;
-          elem.pause();
-        });
-      }
+      game.songsPause();
     }
 
 

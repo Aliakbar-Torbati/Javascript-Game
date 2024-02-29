@@ -280,4 +280,11 @@ class Game {
   //   // calling the start method
   //   this.start();
   }
+  songsPause(){
+    this.buildingCrashSong.pause()
+    this.backgroungSong.pause()
+    this.octapusCrashSong.pause()
+    this.heartSong.pause()
+    this.gameOverSong.pause()
+  };
 }
