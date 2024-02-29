@@ -36,9 +36,27 @@ body {
     /* display: flex; */
     flex-direction: column;
   }
+
+  #game-container p {
+  margin: 10px;
+  }
+
+  #userId{
+margin-right: 100px;
+font-size: large;
+font-weight: bold;
+  }
+  
+  #goodLock{
+    margin-right: 150px;
+    font-size: large;
+    font-weight: bold;
+    color: rgb(232, 14, 14);
+      }
   #scoreDiv {
     display: flex;
     flex-direction: row;
+    margin-bottom: 30px;
   }
   
   h2{
@@ -84,13 +102,42 @@ body {
     width: 150px;
   }
   
-  body button {
-    
-
+  #start-button {
 
     display: inline-block;
     position: relative;
-    margin: 10px;
+    width: 300px;
+    margin: 25px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 22px/35px Arial, sans-serif;
+ 
+    text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+ 
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+ 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+ 
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+
+  }
+
+  #restart-button {
+
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    margin: 25px;
+    margin-left: 160px;
     padding: 0 20px;
     text-align: center;
     text-decoration: none;
@@ -152,6 +199,18 @@ body {
   #userDiv {
     font-size: 24px;
     color: #333;
-    text-align: center;
-    margin: 20px 0;
+    text-align: left;
+    margin: 0px;
   }
+
+  #endContainer h1, h3 {
+    color: 	rgba(236, 210, 210, 0.871);
+    width: 400px;
+    margin-left: 110px;
+    margin-top: 10px;
+  }
+  #endContainer h1 {
+    font-size: 60px;
+    margin-top: 40px;
+  }
+

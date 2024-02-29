@@ -25,8 +25,11 @@
 
       <!-- main game screen -->
       <div id="game-container">
-        <div id="userDiv"><h3 id="userId"></h3></div>
+        <!-- <div id="userDiv"><h3 id="userId"></h3></div> -->
+        
         <div id="scoreDiv">
+          <!-- <p id="userId"></p><br> -->
+          <p id="goodLock">Good Lock <span id="userId"></span></p>
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
       </div>
@@ -38,6 +41,7 @@
       <div id="game-end">
         <div id="endContainer">
           <h1>Game Over</h1>
+          <h3 id="finalScore"></h3>
           <h3 id="finalText"></h3>
           <br />
           <button id="restart-button">Try again!</button>

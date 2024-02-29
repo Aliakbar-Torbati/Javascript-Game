@@ -31,18 +31,18 @@ class Building {
   
     move() {
       // Move the obstacle 
-      this.left += -2;
+      this.left += -1.5;
       this.top+= this.directionY;
       // Update the obstacle's position on the screen
       this.updatePosition();
     }
     highermove(){
-      this.left += -3;
+      this.left += -2;
       this.updatePosition();
     }
 
     highermove2(){
-      this.left += -4.5;
+      this.left += -3.5;
       this.updatePosition();
     }
 

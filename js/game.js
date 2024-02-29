@@ -8,6 +8,7 @@ class Game {
     this.livesElement = document.getElementById("lives");
     this.userName = document.getElementById("userName");
     this.userId = document.getElementById("userId");
+    this.finalScore = document.getElementById("finalScore");
     this.finalText = document.getElementById("finalText");
 
     this.player = new Player(
@@ -47,7 +48,7 @@ class Game {
     // Set the height and width of the game screen
     this.gameScreen.style.height = `${this.height}px`;
     this.gameScreen.style.width = `${this.width}px`;
-    this.userId.innerText = `Good Lock ${this.userName.value}`;
+    this.userId.innerText = `${this.userName.value}`;
 
     // Hide the start screen
     this.startScreen.style.display = "none";
@@ -240,8 +241,11 @@ class Game {
     this.gameContainer.style.display = "none";
     this.gameEndScreen.style.display = "block";
     this.backgroungSong.pause()
+
+    this.finalScore.innerText = `Your Final Score: ${this.score}`
+
     if (this.score < 5) {
-      this.finalText.innerText = "oh! youshould try more...";
+      this.finalText.innerText = "oh! you should try more...";
     }
     if (this.score < 12 && this.score >= 5) {
       this.finalText.innerText = "Good try! maybe onetime more...";
